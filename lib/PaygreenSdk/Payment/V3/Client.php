@@ -75,9 +75,9 @@ class Client extends \Paygreen\Sdk\Core\Client
      * @throws Exception
      *
      */
-    public function listPaymentConfig($shopId = null)
+    public function listPaymentConfig()
     {
-        $request = (new PaymentConfigRequest($this->requestFactory, $this->environment))->getGetRequest($shopId);
+        $request = (new PaymentConfigRequest($this->requestFactory, $this->environment))->getGetRequest();
         $this->setLastRequest($request);
 
         $response = $this->sendRequest($request);
